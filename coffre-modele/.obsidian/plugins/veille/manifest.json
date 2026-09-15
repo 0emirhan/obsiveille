@@ -1,0 +1,9 @@
+{
+  "id": "veille",
+  "name": "Veille",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Récupère la veille OSINT depuis ton serveur veille et la range dans le coffre, filtrée par tes mots-clés (qui ne quittent pas ta machine).",
+  "author": "emirhan",
+  "isDesktopOnly": false
+}
