@@ -9,3 +9,6 @@
 
 La note **Accueil** apparaîtra après la première synchro : les articles récents,
 en mur d'images.
+
+L'habillage (`snippets/veille.css`) est déjà activé. S'il ne s'affiche pas : Réglages →
+Apparence → Snippets CSS, vérifie que **veille** est bien coché.

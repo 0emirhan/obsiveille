@@ -1,0 +1,61 @@
+/* Veille — habillage des callouts et des vues cartes (Bases)
+   À placer dans <ton coffre>/.obsidian/snippets/veille.css puis activer dans
+   Réglages → Apparence → Snippets CSS. */
+
+/* ── Callouts spécifiques aux notes de veille ─────────────────────────────── */
+
+/* Chapeau (résumé en tête de note) : identité propre plutôt que le style
+   "abstract" générique. */
+.callout[data-callout="abstract"] {
+  --callout-color: 14, 116, 144;   /* bleu sarcelle */
+  --callout-icon: satellite-dish;
+}
+
+/* "Titre et chapeau traduits" (callout info en fin de note) : distinct du
+   style "info" générique, pour repérer d'un coup d'œil qu'un texte est traduit. */
+.callout[data-callout="info"] {
+  --callout-color: 124, 58, 237;   /* violet */
+  --callout-icon: languages;
+}
+
+/* ── Vues cartes (Bases) : "À lire" / "Mur" ───────────────────────────────
+   Les classes exactes de Bases sont encore jeunes côté Obsidian (1.9+) : si
+   rien ne bouge après activation, ouvre l'inspecteur (Ctrl+Shift+I), clique
+   une carte, et remplace les sélecteurs ci-dessous par les vraies classes
+   trouvées (cherche autour de "bases-card"). */
+
+.bases-cards-view .bases-card,
+.bases-view.bases-cards .bases-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bases-cards-view .bases-card:hover,
+.bases-view.bases-cards .bases-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.bases-cards-view .bases-card img,
+.bases-view.bases-cards .bases-card img {
+  transition: transform 0.2s ease;
+}
+
+.bases-cards-view .bases-card:hover img,
+.bases-view.bases-cards .bases-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Liseré de couleur par thème, si les tags sont affichés sur la carte
+   (propriété note.themes) — un thème = une couleur. Complète la liste si tu
+   ajoutes des thèmes dans veille.toml. */
+.bases-card:has(.tag-veille-cyber)            { border-left: 3px solid #0891b2; }
+.bases-card:has(.tag-veille-espionnage)       { border-left: 3px solid #7c3aed; }
+.bases-card:has(.tag-veille-russie-ukraine)   { border-left: 3px solid #dc2626; }
+.bases-card:has(.tag-veille-moyen-orient)     { border-left: 3px solid #ea580c; }
+.bases-card:has(.tag-veille-defense)          { border-left: 3px solid #4b5563; }
+.bases-card:has(.tag-veille-turquie-caucase-asie) { border-left: 3px solid #ca8a04; }
+.bases-card:has(.tag-veille-terrorisme)       { border-left: 3px solid #991b1b; }
+.bases-card:has(.tag-veille-influence)        { border-left: 3px solid #0d9488; }
