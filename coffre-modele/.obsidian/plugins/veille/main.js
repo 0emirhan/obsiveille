@@ -11,7 +11,7 @@
 const { Plugin, PluginSettingTab, Setting, Notice, Modal, requestUrl, normalizePath } = require("obsidian");
 
 const DEFAUTS = {
-  url: "https://notes.cyberintel.fr",
+  url: "",
   jeton: "",
   nom: "",
   dossier: "Veille",
@@ -264,7 +264,7 @@ class OngletReglages extends PluginSettingTab {
     const s = this.plugin.settings;
     const maj = async () => this.plugin.sauver();
 
-    new Setting(c).setName("Adresse du serveur").setDesc("Ex. https://notes.cyberintel.fr")
+    new Setting(c).setName("Adresse du serveur").setDesc("Ex. https://veille.exemple.fr")
       .addText((t) => t.setValue(s.url).onChange(async (v) => { s.url = v.trim(); await maj(); }));
 
     new Setting(c).setName("Jeton").setDesc("Celui que t'a donné l'opérateur")
